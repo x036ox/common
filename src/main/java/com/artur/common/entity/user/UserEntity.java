@@ -23,6 +23,8 @@ public class UserEntity {
     private String username;
     @NotBlank
     private String authorities;
+    @NotBlank
+    private String email;
     private String picture;
 
 
@@ -49,10 +51,11 @@ public class UserEntity {
     @PrimaryKeyJoinColumn
     private UserMetadata userMetadata;
 
-    public UserEntity(String id, String username, String picture, String authorities) {
+    public UserEntity(String id, String username, String email, String picture, String authorities) {
         this();
         this.id = id;
         this.username = username;
+        this.email = email;
         this.picture = picture;
         this.authorities = authorities;
     }
