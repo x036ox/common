@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -21,7 +21,7 @@ public class VideoEntity {
     private String title;
     @NotNull
     private Integer views;
-    private LocalDateTime uploadDate;
+    private Instant uploadDate;
     private String description;
 
     @ManyToOne
@@ -33,7 +33,7 @@ public class VideoEntity {
     @PrimaryKeyJoinColumn
     private VideoMetadata videoMetadata;
 
-    public VideoEntity(Long id, String title, Integer views, LocalDateTime uploadDate, String description, UserEntity user) {
+    public VideoEntity(Long id, String title, Integer views, Instant uploadDate, String description, UserEntity user) {
         this.id = id;
         this.title = title;
         this.views = views;
@@ -112,11 +112,11 @@ public class VideoEntity {
         this.views = views;
     }
 
-    public LocalDateTime getUploadDate() {
+    public Instant getUploadDate() {
         return uploadDate;
     }
 
-    public void setUploadDate(LocalDateTime uploadDate) {
+    public void setUploadDate(Instant uploadDate) {
         this.uploadDate = uploadDate;
     }
 

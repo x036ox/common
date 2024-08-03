@@ -2,7 +2,7 @@ package com.artur.common.entity.user;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.Objects;
 
 @Entity
@@ -18,13 +18,13 @@ public class WatchHistory {
 
     private Long videoId;
 
-     private LocalDateTime date;
+     private Instant date;
 
     public WatchHistory(Long id, UserEntity userEntity, Long videoId) {
         this.id = id;
         this.userEntity = userEntity;
         this.videoId = videoId;
-        this.date = LocalDateTime.now();
+        this.date = Instant.now();
     }
 
     public WatchHistory() {
@@ -76,11 +76,11 @@ public class WatchHistory {
         this.userEntity = userEntity;
     }
 
-    public LocalDateTime getDate() {
+    public Instant getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(Instant date) {
         this.date = date;
     }
 }
